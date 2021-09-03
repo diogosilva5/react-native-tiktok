@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -51,7 +51,23 @@ const Navigation = () => {
                 component={New}
                 options={{
                     tabBarButton: () => (
-                        <View style={{ width: 50, height: 50, backgroundColor: 'black' }} />
+                        <TouchableOpacity
+                            style={{
+                                width: 50,
+                                height: 30,
+                                marginVertical: 10,
+                                backgroundColor: 'white',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                borderRadius: 8,
+                                borderLeftWidth: 3,
+                                borderLeftColor: 'red',
+                                borderRightWidth: 3,
+                                borderRightColor: 'blue',
+                            }}
+                            onPress={() => console.log('newwww')}>
+                            <Ionicons name="md-pulse" size={20} color="black" />
+                        </TouchableOpacity>
                     ),
                 }}
             />
@@ -63,7 +79,7 @@ const Navigation = () => {
                         <Ionicons
                             name={focused ? 'md-star' : 'md-star-outline'}
                             size={24}
-                            color="white"
+                            color="black"
                         />
                     ),
                 }}
